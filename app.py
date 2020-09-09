@@ -3,6 +3,8 @@ import api_pull as ap
 import plot
 from bokeh.resources import CDN
 from bokeh.embed import file_html
+from time import sleep
+
 app = Flask(__name__)
 
 app.vars={}
@@ -33,6 +35,8 @@ def index():
             Html_file= open("templates/results.html","w")
             Html_file.write(html)
             Html_file.close()
+            render_template('results.html')
+            sleep(0.5)
             #render_template('results.html', script=script, div=div)
             return render_template('results.html')
             
