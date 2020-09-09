@@ -25,6 +25,8 @@ def index():
         if len(app.vars['results']) == 0:
             return render_template('error.html')
         else:
+            return render_template('error.html')
+            '''
             #script, div = plot.fig(app.vars['results'], app.vars['ticker'])
             html= plot.fig(app.vars['results'], app.vars['ticker'])
             Html_file= open("templates/results.html","w")
@@ -38,7 +40,7 @@ def index():
             
             #render_template('results.html', script=script, div=div)
             return render_template('results.html')
-
+            '''
 
 if __name__ == "__main__":
     app.run(debug=True)
