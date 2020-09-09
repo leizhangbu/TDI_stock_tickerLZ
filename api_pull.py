@@ -15,9 +15,10 @@ def get_data(ticker):
     start_date = today.replace(year=today.year if today.month > 1 else today.year - 1, month=today.month - 1 if today.month >1 else 12)
     print(today,start_date)
     resp = requests.get(url+'&symbol='+str(ticker)+'&outputsize=compact&apikey=VEGV3MZYOH1TFOX8')
-    print(url+'&symbol='+str(ticker)+'&outputsize=compact&apikey=VEGV3MZYOH1TFOX8')
-    print(resp)
+
+    
     json = resp.json()
+    print(json)
     df = pd.DataFrame.from_dict(json['Time Series (Daily)'],orient='index')
     df ['date'] = pd.to_datetime(df.index)
     datatable = df ['date']
