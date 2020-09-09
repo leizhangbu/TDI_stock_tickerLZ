@@ -23,7 +23,7 @@ def index():
         print(app.vars['ticker'])
         print(app.vars['results'])
         if len(app.vars['results']) == 0:
-            return render_template('results.html')
+            return render_template('error.html')
         else:
             #script, div = plot.fig(app.vars['results'], app.vars['ticker'])
             html= plot.fig(app.vars['results'], app.vars['ticker'])
