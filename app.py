@@ -37,7 +37,7 @@ def index():
             Html_file= open("templates/results.html","w")
             Html_file.write(html)
             Html_file.close()
-            render_template('results.html')
+            render_template('results.html', script=script, div=div)
             #render_template('results.html', script=script, div=div)
             return render_template('results.html', script=script, div=div)
             
