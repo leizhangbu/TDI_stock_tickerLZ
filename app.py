@@ -2,9 +2,8 @@ from flask import Flask, render_template, request, redirect
 import api_pull as ap
 import plot
 from bokeh.resources import CDN
-from bokeh.embed import file_html
+from bokeh.embed import file_html,components
 from time import sleep
-
 app = Flask(__name__)
 
 app.vars={}
@@ -31,14 +30,14 @@ def index():
             print(app.vars['results'])
             #script, div = plot.fig(app.vars['results'], app.vars['ticker'])
             html= plot.fig(app.vars['results'], app.vars['ticker'])
+            script, div = components(html)
             html = file_html(html, CDN, "results.html")
             Html_file= open("templates/results.html","w")
             Html_file.write(html)
             Html_file.close()
             render_template('results.html')
-            sleep(0.5)
             #render_template('results.html', script=script, div=div)
-            return render_template('results.html')
+            return render_template('results.html', script=script, div=div)
             
 
 if __name__ == "__main__":
