@@ -20,13 +20,10 @@ def get_data(ticker):
         df = pd.DataFrame.from_dict(json['Time Series (Daily)'],orient='index')
         df ['date'] = pd.to_datetime(df.index)
         datatable = df ['date']
-        df['1. open'].astype('float')
-        df['2. high'].astype('float')
-        df['3. low'].astype('float')
         df['4. close'].astype('float')
         df.index = pd.to_datetime(df.date)
         #print('6',df[(df['date']>=start_date)]['4. close'])
-        return df[len(df)-23:]#df[(df['date']>=start_date) & (df['date']<=today)]['4. close']
+        return df['4. close'][len(df)-23:]#df[(df['date']>=start_date) & (df['date']<=today)]['4. close']
     except Exception as e:
         df = []
         return df
