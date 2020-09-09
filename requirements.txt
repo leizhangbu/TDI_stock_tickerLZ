@@ -1,6 +1,6 @@
 gunicorn
 requests
-pandas
+pandas=0.22.0
 bokeh
 dill
 flask
