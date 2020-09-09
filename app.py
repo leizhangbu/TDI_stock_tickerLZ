@@ -21,10 +21,11 @@ def index():
         app.vars['results'] = ap.get_data(app.vars['ticker'])
         print("length of df: ",len(app.vars['results']))
         print(app.vars['ticker'])
-        print(app.vars['results'])
         if len(app.vars['results']) == 0:
             return render_template('error.html')
         else:
+            print(app.vars['ticker'])
+            print(app.vars['results'])
             #script, div = plot.fig(app.vars['results'], app.vars['ticker'])
             html= plot.fig(app.vars['results'], app.vars['ticker'])
             Html_file= open("templates/results.html","w")
