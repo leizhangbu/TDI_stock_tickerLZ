@@ -22,7 +22,7 @@ def index():
         print("length of df: ",len(app.vars['results']))
         print(app.vars['ticker'])
         if len(app.vars['results']) == 0:
-            return render_template('templates/error.html')
+            return render_template('error.html')
         else:
             print(app.vars['ticker'])
             print(app.vars['results'])
@@ -31,9 +31,8 @@ def index():
             Html_file= open("templates/results.html","w")
             Html_file.write(html)
             Html_file.close()
-            
             #render_template('results.html', script=script, div=div)
-            return render_template('templates/results.html')
+            return render_template('results.html')
             
 
 if __name__ == "__main__":
