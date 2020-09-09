@@ -8,7 +8,7 @@ def fig(df,title):
     plot.yaxis.axis_label = "Closing Price"
     plot.xaxis.axis_label = "Date"
     plot.line(df.index, df)
-
+    print(df,df.index)
     
     return file_html(plot, CDN, "results.html")
 
