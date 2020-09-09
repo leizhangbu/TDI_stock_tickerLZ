@@ -4,6 +4,7 @@ import plot
 from bokeh.resources import CDN
 from bokeh.embed import file_html,components
 from time import sleep
+from os import remove
 app = Flask(__name__)
 
 app.vars={}
@@ -28,6 +29,7 @@ def index():
         else:
             print(app.vars['ticker'])
             print(app.vars['results'])
+            remove("templates/results.html")
             #script, div = plot.fig(app.vars['results'], app.vars['ticker'])
             html= plot.fig(app.vars['results'], app.vars['ticker'])
             script, div = components(html)
