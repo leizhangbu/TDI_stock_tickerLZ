@@ -20,6 +20,7 @@ def get_data(ticker):
     json = resp.json()
     print(json)
     df = pd.DataFrame.from_dict(json['Time Series (Daily)'],orient='index')
+    print(df[:100])
     df ['date'] = pd.to_datetime(df.index)
     datatable = df ['date']
     df['4. close'].astype('float')
