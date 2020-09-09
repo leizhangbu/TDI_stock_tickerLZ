@@ -22,7 +22,6 @@ def get_data(ticker):
         datatable = df ['date']
         df['4. close'].astype('float')
         df.index = pd.to_datetime(df.date)
-        #print('6',df[(df['date']>=start_date)]['4. close'])
         return df['4. close'][len(df)-23:]#df[(df['date']>=start_date) & (df['date']<=today)]['4. close']
     except Exception as e:
         df = []

@@ -23,9 +23,6 @@ def index():
             return render_template('error.html')
         else:
             script, div = plot.fig(app.vars['results'], app.vars['ticker'])
-            f = open('%s.txt'%(app.vars['ticker']),'w')
-            f.write('Ticker: %s\n'%(app.vars['ticker']))
-            f.close()
             return render_template('results.html', script=script, div=div)
 
 

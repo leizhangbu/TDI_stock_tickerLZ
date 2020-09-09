@@ -7,7 +7,7 @@ def fig(df,title):
     plot.yaxis.axis_label = "Closing Price"
     plot.xaxis.axis_label = "Date"
     plot.line(df.index, df)
-
+    plot.circle(df.index, df, fill_color="white", size=8)
     script, div = components(plot)
 
     
