@@ -15,7 +15,7 @@ def index():
     if request.method == 'GET':
         return render_template('index.html')
     else:
-        '''
+
         #request was a post
         app.vars['ticker'] = request.form['ticker']
         app.vars['results'] = ap.get_data(app.vars['ticker'])
@@ -39,7 +39,6 @@ def index():
             #render_template('results.html', script=script, div=div)
             return render_template('results.html')
 
-        '''
-        a=1
+
 if __name__ == "__main__":
     app.run(debug=True)
