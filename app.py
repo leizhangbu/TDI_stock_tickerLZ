@@ -25,7 +25,6 @@ def index():
         if len(app.vars['results']) == 0:
             return render_template('error.html')
         else:
-            return render_template('error.html')
             
             #script, div = plot.fig(app.vars['results'], app.vars['ticker'])
             html= plot.fig(app.vars['results'], app.vars['ticker'])
