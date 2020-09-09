@@ -26,7 +26,7 @@ def get_data(ticker):
     try:
         df.index = pd.to_datetime(df.date)
         print('5',df[:10])
-        print(df[(df['date']>=start_date) & (df['date']<=today)]['4. close'])
+        print('6',df[(df['date']>=start_date) & (df['date']<=today)]['4. close'])
         return df[(df['date']>=start_date) & (df['date']<=today)]['4. close']
     except Exception as e:
         df = []
