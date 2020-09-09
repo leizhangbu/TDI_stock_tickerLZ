@@ -20,12 +20,17 @@ def get_data(ticker):
     json = resp.json()
     print(json)
     df = pd.DataFrame.from_dict(json['Time Series (Daily)'],orient='index')
-    print(df[:100])
+    print('1',df[:10])
     df ['date'] = pd.to_datetime(df.index)
+    print('2',df[:10])
     datatable = df ['date']
+    print('3',df[:10])
     df['4. close'].astype('float')
+    print('4',df[:10])
     try:
         df.index = pd.to_datetime(df.index)
+        print('5',df[:10])
+        print(df[start_date:today]['4. close'])
         return df[start_date:today]['4. close']
     except Exception as e:
         df = []
